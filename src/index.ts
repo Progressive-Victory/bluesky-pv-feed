@@ -1,6 +1,8 @@
 import dotenv from 'dotenv';
 import FeedGenerator from './server';
 
+// TODO: Might be nice to make it easier to create an algorithm, maybe provide a callback to determine what posts to save here and what key for the db
+
 const run = async () => {
 	dotenv.config();
 	const hostname = maybeStr(process.env.FEEDGEN_HOSTNAME) ?? 'example.com';

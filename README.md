@@ -11,6 +11,7 @@ They work very simply: the server receives a request from a user's server and re
 A Feed Generator service can host one or more algorithms. The service itself is identified by DID, while each algorithm that it hosts is declared by a record in the repo of the account that created it. For instance, feeds offered by Bluesky will likely be declared in `@bsky.app`'s repo. Therefore, a given algorithm is identified by the at-uri of the declaration record. This declaration record includes a pointer to the service's DID along with some profile information for the feed.
 
 The general flow of providing a custom algorithm to a user is as follows:
+
 - A user requests a feed from their server (PDS) using the at-uri of the declared feed
 - The PDS resolves the at-uri and finds the DID doc of the Feed Generator
 - The PDS sends a `getFeedSkeleton` request to the service endpoint declared in the Feed Generator's DID doc
@@ -28,19 +29,20 @@ We've set up this simple server with SQLite to store and query data. Feel free t
 
 Next, you will need to do two things:
 
-1. Implement indexing logic in `src/subscription.ts`. 
-   
+1. Implement indexing logic in `src/subscription.ts`.
+  
    This will subscribe to the repo subscription stream on startup, parse events and index them according to your provided logic.
 
 2. Implement feed generation logic in `src/algos`
 
-   For inspiration, we've provided a very simple feed algorithm (`whats-alf`) that returns all posts related to the titular character of the TV show ALF. 
+   For inspiration, we've provided a very simple feed algorithm (`whats-alf`) that returns all posts related to the titular character of the TV show ALF.
 
    You can either edit it or add another algorithm alongside it. The types are in place, and you will just need to return something that satisfies the `SkeletonFeedPost[]` type.
 
 We've taken care of setting this server up with a did:web. However, you're free to switch this out for did:plc if you like - you may want to if you expect this Feed Generator to be long-standing and possibly migrating domains.
 
 ### Deploying your feed
+
 Your feed will need to be accessible at the value supplied to the `FEEDGEN_HOSTNAME` environment variable.
 
 The service must be set up to respond to HTTPS queries over port 443.
@@ -56,6 +58,9 @@ After successfully running the script, you should be able to see your feed from 
 ## Running the Server
 
 Install dependencies with `yarn` and then run the server with `yarn start`. This will start the server on port 3000, or what's defined in `.env`. You can then watch the firehose output in the console and access the output of the default custom ALF feed at [http://localhost:3000/xrpc/app.bsky.feed.getFeedSkeleton?feed=at://did:example:alice/app.bsky.feed.generator/whats-alf](http://localhost:3000/xrpc/app.bsky.feed.getFeedSkeleton?feed=at://did:example:alice/app.bsky.feed.generator/whats-alf).
+
+- [DID](https://bsky.social/xrpc/com.atproto.identity.resolveHandle?handle=okami.codes)
+- [Feed](http://localhost:3000/xrpc/app.bsky.feed.getFeedSkeleton?feed=at://did:plc:ihjhydotnviqfmkk5jnd33er/app.bsky.feed.generator/whats-alf)
 
 ## Some Details
 
@@ -103,6 +108,7 @@ If you are creating a generic feed that does not differ for different users, you
 Users are authenticated with a simple JWT signed by the user's repo signing key.
 
 This JWT header/payload takes the format:
+
 ```ts
 const header = {
   type: "JWT",
@@ -118,6 +124,7 @@ const payload = {
 We provide utilities for verifying user JWTs in the `@atproto/xrpc-server` package, and you can see them in action in `src/auth.ts`.
 
 ### Pagination
+
 You'll notice that the `getFeedSkeleton` method returns a `cursor` in its response and takes a `cursor` param as input.
 
 This cursor is treated as an opaque value and fully at the Feed Generator's discretion. It is simply passed through the PDS directly to and from the client.
@@ -138,15 +145,29 @@ Depending on your algorithm, you likely do not need to keep posts around for lon
 Some examples:
 
 ### Reimplementing What's Hot
+
 To reimplement "What's Hot", you may subscribe to the firehose and filter for all posts and likes (ignoring profiles/reposts/follows/etc.). You would keep a running tally of likes per post and when a PDS requests a feed, you would send the most recent posts that pass some threshold of likes.
 
 ### A Community Feed
+
 You might create a feed for a given community by compiling a list of DIDs within that community and filtering the firehose for all posts from users within that list.
 
 ### A Topical Feed
+
 To implement a topical feed, you might filter the algorithm for posts and pass the post text through some filtering mechanism (an LLM, a keyword matcher, etc.) that filters for the topic of your choice.
 
 ## Community Feed Generator Templates
 
 - [Python](https://github.com/MarshalX/bluesky-feed-generator) - [@MarshalX](https://github.com/MarshalX)
 - [Ruby](https://github.com/mackuba/bluesky-feeds-rb) - [@mackuba](https://github.com/mackuba)
+
+## Links
+
+- [DID](https://github.com/bluesky-social/did-method-plc)
+- [DID Spec](https://atproto.com/specs/did)
+- [https://plc.directory/did:plc:3i6ufnhlwddfez47msmcmajj](https://plc.directory/did:plc:3i6ufnhlwddfez47msmcmajj) (replace with DID reference)
+
+## Possibly Helpful Information
+
+- If you want to modify what posts are "stored", go to /src/subscription.ts, that's where it decides what to save
+- Modifying the algorithm is at /src/algos/ - here the database gets pulled from and a list of posts are returned

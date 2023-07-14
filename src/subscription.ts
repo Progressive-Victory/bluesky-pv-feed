@@ -9,18 +9,17 @@ export class FirehoseSubscription extends FirehoseSubscriptionBase {
 		if (!isCommit(evt)) return;
 		const ops = await getOpsByType(evt);
 
-		// This logs the text of every post off the firehose.
-		// Just for fun :)
-		// Delete before actually using
-		for (const post of ops.posts.creates) {
-			console.log(post.record.text);
-		}
-
 		const postsToDelete = ops.posts.deletes.map((del) => del.uri);
 		const postsToCreate = ops.posts.creates
 			.filter((create) => {
-				// only alf-related posts
-				return create.record.text.toLowerCase().includes('alf');
+				// create.record.author should be @progressiveictory.win https://bsky.social/xrpc/com.atproto.identity.resolveHandle?handle=progressivevictory.win
+				return (
+					create.record.author ===
+                        'did:plc:4ndyufcdqvuihxwsicuaboru' ||
+                    // OR create.record.text should contain a hashtag such as #pv
+                    create.record.text.toLowerCase().includes('#pv')
+				);
+				// TODO: Or anybody this account follows
 			})
 			.map((create) => {
 				// map alf-related posts to a db row
