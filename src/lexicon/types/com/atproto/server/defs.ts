@@ -1,10 +1,10 @@
 /**
  * GENERATED CODE - DO NOT MODIFY
  */
-import { ValidationResult, BlobRef } from '@atproto/lexicon'
-import { lexicons } from '../../../../lexicons'
-import { isObj, hasProp } from '../../../../util'
-import { CID } from 'multiformats/cid'
+import { ValidationResult, BlobRef } from '@atproto/lexicon';
+import { lexicons } from '../../../../lexicons';
+import { isObj, hasProp } from '../../../../util';
+import { CID } from 'multiformats/cid';
 
 export interface InviteCode {
   code: string
@@ -18,15 +18,15 @@ export interface InviteCode {
 }
 
 export function isInviteCode(v: unknown): v is InviteCode {
-  return (
-    isObj(v) &&
+	return (
+		isObj(v) &&
     hasProp(v, '$type') &&
     v.$type === 'com.atproto.server.defs#inviteCode'
-  )
+	);
 }
 
 export function validateInviteCode(v: unknown): ValidationResult {
-  return lexicons.validate('com.atproto.server.defs#inviteCode', v)
+	return lexicons.validate('com.atproto.server.defs#inviteCode', v);
 }
 
 export interface InviteCodeUse {
@@ -36,13 +36,13 @@ export interface InviteCodeUse {
 }
 
 export function isInviteCodeUse(v: unknown): v is InviteCodeUse {
-  return (
-    isObj(v) &&
+	return (
+		isObj(v) &&
     hasProp(v, '$type') &&
     v.$type === 'com.atproto.server.defs#inviteCodeUse'
-  )
+	);
 }
 
 export function validateInviteCodeUse(v: unknown): ValidationResult {
-  return lexicons.validate('com.atproto.server.defs#inviteCodeUse', v)
+	return lexicons.validate('com.atproto.server.defs#inviteCodeUse', v);
 }

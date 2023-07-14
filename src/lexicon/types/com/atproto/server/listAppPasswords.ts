@@ -1,12 +1,12 @@
 /**
  * GENERATED CODE - DO NOT MODIFY
  */
-import express from 'express'
-import { ValidationResult, BlobRef } from '@atproto/lexicon'
-import { lexicons } from '../../../../lexicons'
-import { isObj, hasProp } from '../../../../util'
-import { CID } from 'multiformats/cid'
-import { HandlerAuth } from '@atproto/xrpc-server'
+import express from 'express';
+import { ValidationResult, BlobRef } from '@atproto/lexicon';
+import { lexicons } from '../../../../lexicons';
+import { isObj, hasProp } from '../../../../util';
+import { CID } from 'multiformats/cid';
+import { HandlerAuth } from '@atproto/xrpc-server';
 
 export interface QueryParams {}
 
@@ -46,13 +46,13 @@ export interface AppPassword {
 }
 
 export function isAppPassword(v: unknown): v is AppPassword {
-  return (
-    isObj(v) &&
+	return (
+		isObj(v) &&
     hasProp(v, '$type') &&
     v.$type === 'com.atproto.server.listAppPasswords#appPassword'
-  )
+	);
 }
 
 export function validateAppPassword(v: unknown): ValidationResult {
-  return lexicons.validate('com.atproto.server.listAppPasswords#appPassword', v)
+	return lexicons.validate('com.atproto.server.listAppPasswords#appPassword', v);
 }

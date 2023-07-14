@@ -1,12 +1,12 @@
 /**
  * GENERATED CODE - DO NOT MODIFY
  */
-import express from 'express'
-import { ValidationResult, BlobRef } from '@atproto/lexicon'
-import { lexicons } from '../../../../lexicons'
-import { isObj, hasProp } from '../../../../util'
-import { CID } from 'multiformats/cid'
-import { HandlerAuth } from '@atproto/xrpc-server'
+import express from 'express';
+import { ValidationResult, BlobRef } from '@atproto/lexicon';
+import { lexicons } from '../../../../lexicons';
+import { isObj, hasProp } from '../../../../util';
+import { CID } from 'multiformats/cid';
+import { HandlerAuth } from '@atproto/xrpc-server';
 
 export interface QueryParams {
   /** The handle or DID of the repo. */
@@ -61,13 +61,13 @@ export interface Record {
 }
 
 export function isRecord(v: unknown): v is Record {
-  return (
-    isObj(v) &&
+	return (
+		isObj(v) &&
     hasProp(v, '$type') &&
     v.$type === 'com.atproto.repo.listRecords#record'
-  )
+	);
 }
 
 export function validateRecord(v: unknown): ValidationResult {
-  return lexicons.validate('com.atproto.repo.listRecords#record', v)
+	return lexicons.validate('com.atproto.repo.listRecords#record', v);
 }

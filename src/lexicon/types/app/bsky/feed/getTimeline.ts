@@ -1,13 +1,13 @@
 /**
  * GENERATED CODE - DO NOT MODIFY
  */
-import express from 'express'
-import { ValidationResult, BlobRef } from '@atproto/lexicon'
-import { lexicons } from '../../../../lexicons'
-import { isObj, hasProp } from '../../../../util'
-import { CID } from 'multiformats/cid'
-import { HandlerAuth } from '@atproto/xrpc-server'
-import * as AppBskyFeedDefs from './defs'
+import express from 'express';
+import { ValidationResult, BlobRef } from '@atproto/lexicon';
+import { lexicons } from '../../../../lexicons';
+import { isObj, hasProp } from '../../../../util';
+import { CID } from 'multiformats/cid';
+import { HandlerAuth } from '@atproto/xrpc-server';
+import * as AppBskyFeedDefs from './defs';
 
 export interface QueryParams {
   algorithm?: string

@@ -1,12 +1,12 @@
 /**
  * GENERATED CODE - DO NOT MODIFY
  */
-import { ValidationResult, BlobRef } from '@atproto/lexicon'
-import { lexicons } from '../../../../lexicons'
-import { isObj, hasProp } from '../../../../util'
-import { CID } from 'multiformats/cid'
-import * as AppBskyActorDefs from '../actor/defs'
-import * as AppBskyRichtextFacet from '../richtext/facet'
+import { ValidationResult, BlobRef } from '@atproto/lexicon';
+import { lexicons } from '../../../../lexicons';
+import { isObj, hasProp } from '../../../../util';
+import { CID } from 'multiformats/cid';
+import * as AppBskyActorDefs from '../actor/defs';
+import * as AppBskyRichtextFacet from '../richtext/facet';
 
 export interface ListViewBasic {
   uri: string
@@ -19,15 +19,15 @@ export interface ListViewBasic {
 }
 
 export function isListViewBasic(v: unknown): v is ListViewBasic {
-  return (
-    isObj(v) &&
+	return (
+		isObj(v) &&
     hasProp(v, '$type') &&
     v.$type === 'app.bsky.graph.defs#listViewBasic'
-  )
+	);
 }
 
 export function validateListViewBasic(v: unknown): ValidationResult {
-  return lexicons.validate('app.bsky.graph.defs#listViewBasic', v)
+	return lexicons.validate('app.bsky.graph.defs#listViewBasic', v);
 }
 
 export interface ListView {
@@ -44,15 +44,15 @@ export interface ListView {
 }
 
 export function isListView(v: unknown): v is ListView {
-  return (
-    isObj(v) &&
+	return (
+		isObj(v) &&
     hasProp(v, '$type') &&
     v.$type === 'app.bsky.graph.defs#listView'
-  )
+	);
 }
 
 export function validateListView(v: unknown): ValidationResult {
-  return lexicons.validate('app.bsky.graph.defs#listView', v)
+	return lexicons.validate('app.bsky.graph.defs#listView', v);
 }
 
 export interface ListItemView {
@@ -61,21 +61,21 @@ export interface ListItemView {
 }
 
 export function isListItemView(v: unknown): v is ListItemView {
-  return (
-    isObj(v) &&
+	return (
+		isObj(v) &&
     hasProp(v, '$type') &&
     v.$type === 'app.bsky.graph.defs#listItemView'
-  )
+	);
 }
 
 export function validateListItemView(v: unknown): ValidationResult {
-  return lexicons.validate('app.bsky.graph.defs#listItemView', v)
+	return lexicons.validate('app.bsky.graph.defs#listItemView', v);
 }
 
 export type ListPurpose = 'app.bsky.graph.defs#modlist' | (string & {})
 
 /** A list of actors to apply an aggregate moderation action (mute/block) on */
-export const MODLIST = 'app.bsky.graph.defs#modlist'
+export const MODLIST = 'app.bsky.graph.defs#modlist';
 
 export interface ListViewerState {
   muted?: boolean
@@ -83,13 +83,13 @@ export interface ListViewerState {
 }
 
 export function isListViewerState(v: unknown): v is ListViewerState {
-  return (
-    isObj(v) &&
+	return (
+		isObj(v) &&
     hasProp(v, '$type') &&
     v.$type === 'app.bsky.graph.defs#listViewerState'
-  )
+	);
 }
 
 export function validateListViewerState(v: unknown): ValidationResult {
-  return lexicons.validate('app.bsky.graph.defs#listViewerState', v)
+	return lexicons.validate('app.bsky.graph.defs#listViewerState', v);
 }

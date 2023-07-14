@@ -1,17 +1,17 @@
 /**
  * GENERATED CODE - DO NOT MODIFY
  */
-import { ValidationResult, BlobRef } from '@atproto/lexicon'
-import { lexicons } from '../../../../lexicons'
-import { isObj, hasProp } from '../../../../util'
-import { CID } from 'multiformats/cid'
-import * as AppBskyActorDefs from '../actor/defs'
-import * as AppBskyEmbedImages from '../embed/images'
-import * as AppBskyEmbedExternal from '../embed/external'
-import * as AppBskyEmbedRecord from '../embed/record'
-import * as AppBskyEmbedRecordWithMedia from '../embed/recordWithMedia'
-import * as ComAtprotoLabelDefs from '../../../com/atproto/label/defs'
-import * as AppBskyRichtextFacet from '../richtext/facet'
+import { ValidationResult, BlobRef } from '@atproto/lexicon';
+import { lexicons } from '../../../../lexicons';
+import { isObj, hasProp } from '../../../../util';
+import { CID } from 'multiformats/cid';
+import * as AppBskyActorDefs from '../actor/defs';
+import * as AppBskyEmbedImages from '../embed/images';
+import * as AppBskyEmbedExternal from '../embed/external';
+import * as AppBskyEmbedRecord from '../embed/record';
+import * as AppBskyEmbedRecordWithMedia from '../embed/recordWithMedia';
+import * as ComAtprotoLabelDefs from '../../../com/atproto/label/defs';
+import * as AppBskyRichtextFacet from '../richtext/facet';
 
 export interface PostView {
   uri: string
@@ -34,13 +34,13 @@ export interface PostView {
 }
 
 export function isPostView(v: unknown): v is PostView {
-  return (
-    isObj(v) && hasProp(v, '$type') && v.$type === 'app.bsky.feed.defs#postView'
-  )
+	return (
+		isObj(v) && hasProp(v, '$type') && v.$type === 'app.bsky.feed.defs#postView'
+	);
 }
 
 export function validatePostView(v: unknown): ValidationResult {
-  return lexicons.validate('app.bsky.feed.defs#postView', v)
+	return lexicons.validate('app.bsky.feed.defs#postView', v);
 }
 
 export interface ViewerState {
@@ -50,15 +50,15 @@ export interface ViewerState {
 }
 
 export function isViewerState(v: unknown): v is ViewerState {
-  return (
-    isObj(v) &&
+	return (
+		isObj(v) &&
     hasProp(v, '$type') &&
     v.$type === 'app.bsky.feed.defs#viewerState'
-  )
+	);
 }
 
 export function validateViewerState(v: unknown): ValidationResult {
-  return lexicons.validate('app.bsky.feed.defs#viewerState', v)
+	return lexicons.validate('app.bsky.feed.defs#viewerState', v);
 }
 
 export interface FeedViewPost {
@@ -69,15 +69,15 @@ export interface FeedViewPost {
 }
 
 export function isFeedViewPost(v: unknown): v is FeedViewPost {
-  return (
-    isObj(v) &&
+	return (
+		isObj(v) &&
     hasProp(v, '$type') &&
     v.$type === 'app.bsky.feed.defs#feedViewPost'
-  )
+	);
 }
 
 export function validateFeedViewPost(v: unknown): ValidationResult {
-  return lexicons.validate('app.bsky.feed.defs#feedViewPost', v)
+	return lexicons.validate('app.bsky.feed.defs#feedViewPost', v);
 }
 
 export interface ReplyRef {
@@ -95,13 +95,13 @@ export interface ReplyRef {
 }
 
 export function isReplyRef(v: unknown): v is ReplyRef {
-  return (
-    isObj(v) && hasProp(v, '$type') && v.$type === 'app.bsky.feed.defs#replyRef'
-  )
+	return (
+		isObj(v) && hasProp(v, '$type') && v.$type === 'app.bsky.feed.defs#replyRef'
+	);
 }
 
 export function validateReplyRef(v: unknown): ValidationResult {
-  return lexicons.validate('app.bsky.feed.defs#replyRef', v)
+	return lexicons.validate('app.bsky.feed.defs#replyRef', v);
 }
 
 export interface ReasonRepost {
@@ -111,15 +111,15 @@ export interface ReasonRepost {
 }
 
 export function isReasonRepost(v: unknown): v is ReasonRepost {
-  return (
-    isObj(v) &&
+	return (
+		isObj(v) &&
     hasProp(v, '$type') &&
     v.$type === 'app.bsky.feed.defs#reasonRepost'
-  )
+	);
 }
 
 export function validateReasonRepost(v: unknown): ValidationResult {
-  return lexicons.validate('app.bsky.feed.defs#reasonRepost', v)
+	return lexicons.validate('app.bsky.feed.defs#reasonRepost', v);
 }
 
 export interface ThreadViewPost {
@@ -139,15 +139,15 @@ export interface ThreadViewPost {
 }
 
 export function isThreadViewPost(v: unknown): v is ThreadViewPost {
-  return (
-    isObj(v) &&
+	return (
+		isObj(v) &&
     hasProp(v, '$type') &&
     v.$type === 'app.bsky.feed.defs#threadViewPost'
-  )
+	);
 }
 
 export function validateThreadViewPost(v: unknown): ValidationResult {
-  return lexicons.validate('app.bsky.feed.defs#threadViewPost', v)
+	return lexicons.validate('app.bsky.feed.defs#threadViewPost', v);
 }
 
 export interface NotFoundPost {
@@ -157,15 +157,15 @@ export interface NotFoundPost {
 }
 
 export function isNotFoundPost(v: unknown): v is NotFoundPost {
-  return (
-    isObj(v) &&
+	return (
+		isObj(v) &&
     hasProp(v, '$type') &&
     v.$type === 'app.bsky.feed.defs#notFoundPost'
-  )
+	);
 }
 
 export function validateNotFoundPost(v: unknown): ValidationResult {
-  return lexicons.validate('app.bsky.feed.defs#notFoundPost', v)
+	return lexicons.validate('app.bsky.feed.defs#notFoundPost', v);
 }
 
 export interface BlockedPost {
@@ -175,15 +175,15 @@ export interface BlockedPost {
 }
 
 export function isBlockedPost(v: unknown): v is BlockedPost {
-  return (
-    isObj(v) &&
+	return (
+		isObj(v) &&
     hasProp(v, '$type') &&
     v.$type === 'app.bsky.feed.defs#blockedPost'
-  )
+	);
 }
 
 export function validateBlockedPost(v: unknown): ValidationResult {
-  return lexicons.validate('app.bsky.feed.defs#blockedPost', v)
+	return lexicons.validate('app.bsky.feed.defs#blockedPost', v);
 }
 
 export interface GeneratorView {
@@ -202,15 +202,15 @@ export interface GeneratorView {
 }
 
 export function isGeneratorView(v: unknown): v is GeneratorView {
-  return (
-    isObj(v) &&
+	return (
+		isObj(v) &&
     hasProp(v, '$type') &&
     v.$type === 'app.bsky.feed.defs#generatorView'
-  )
+	);
 }
 
 export function validateGeneratorView(v: unknown): ValidationResult {
-  return lexicons.validate('app.bsky.feed.defs#generatorView', v)
+	return lexicons.validate('app.bsky.feed.defs#generatorView', v);
 }
 
 export interface GeneratorViewerState {
@@ -220,15 +220,15 @@ export interface GeneratorViewerState {
 }
 
 export function isGeneratorViewerState(v: unknown): v is GeneratorViewerState {
-  return (
-    isObj(v) &&
+	return (
+		isObj(v) &&
     hasProp(v, '$type') &&
     v.$type === 'app.bsky.feed.defs#generatorViewerState'
-  )
+	);
 }
 
 export function validateGeneratorViewerState(v: unknown): ValidationResult {
-  return lexicons.validate('app.bsky.feed.defs#generatorViewerState', v)
+	return lexicons.validate('app.bsky.feed.defs#generatorViewerState', v);
 }
 
 export interface SkeletonFeedPost {
@@ -238,15 +238,15 @@ export interface SkeletonFeedPost {
 }
 
 export function isSkeletonFeedPost(v: unknown): v is SkeletonFeedPost {
-  return (
-    isObj(v) &&
+	return (
+		isObj(v) &&
     hasProp(v, '$type') &&
     v.$type === 'app.bsky.feed.defs#skeletonFeedPost'
-  )
+	);
 }
 
 export function validateSkeletonFeedPost(v: unknown): ValidationResult {
-  return lexicons.validate('app.bsky.feed.defs#skeletonFeedPost', v)
+	return lexicons.validate('app.bsky.feed.defs#skeletonFeedPost', v);
 }
 
 export interface SkeletonReasonRepost {
@@ -255,13 +255,13 @@ export interface SkeletonReasonRepost {
 }
 
 export function isSkeletonReasonRepost(v: unknown): v is SkeletonReasonRepost {
-  return (
-    isObj(v) &&
+	return (
+		isObj(v) &&
     hasProp(v, '$type') &&
     v.$type === 'app.bsky.feed.defs#skeletonReasonRepost'
-  )
+	);
 }
 
 export function validateSkeletonReasonRepost(v: unknown): ValidationResult {
-  return lexicons.validate('app.bsky.feed.defs#skeletonReasonRepost', v)
+	return lexicons.validate('app.bsky.feed.defs#skeletonReasonRepost', v);
 }

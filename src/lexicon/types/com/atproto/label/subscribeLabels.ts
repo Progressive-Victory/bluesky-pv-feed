@@ -1,13 +1,13 @@
 /**
  * GENERATED CODE - DO NOT MODIFY
  */
-import { ValidationResult, BlobRef } from '@atproto/lexicon'
-import { lexicons } from '../../../../lexicons'
-import { isObj, hasProp } from '../../../../util'
-import { CID } from 'multiformats/cid'
-import { HandlerAuth, ErrorFrame } from '@atproto/xrpc-server'
-import { IncomingMessage } from 'http'
-import * as ComAtprotoLabelDefs from './defs'
+import { ValidationResult, BlobRef } from '@atproto/lexicon';
+import { lexicons } from '../../../../lexicons';
+import { isObj, hasProp } from '../../../../util';
+import { CID } from 'multiformats/cid';
+import { HandlerAuth, ErrorFrame } from '@atproto/xrpc-server';
+import { IncomingMessage } from 'http';
+import * as ComAtprotoLabelDefs from './defs';
 
 export interface QueryParams {
   /** The last known event to backfill from. */
@@ -34,15 +34,15 @@ export interface Labels {
 }
 
 export function isLabels(v: unknown): v is Labels {
-  return (
-    isObj(v) &&
+	return (
+		isObj(v) &&
     hasProp(v, '$type') &&
     v.$type === 'com.atproto.label.subscribeLabels#labels'
-  )
+	);
 }
 
 export function validateLabels(v: unknown): ValidationResult {
-  return lexicons.validate('com.atproto.label.subscribeLabels#labels', v)
+	return lexicons.validate('com.atproto.label.subscribeLabels#labels', v);
 }
 
 export interface Info {
@@ -52,13 +52,13 @@ export interface Info {
 }
 
 export function isInfo(v: unknown): v is Info {
-  return (
-    isObj(v) &&
+	return (
+		isObj(v) &&
     hasProp(v, '$type') &&
     v.$type === 'com.atproto.label.subscribeLabels#info'
-  )
+	);
 }
 
 export function validateInfo(v: unknown): ValidationResult {
-  return lexicons.validate('com.atproto.label.subscribeLabels#info', v)
+	return lexicons.validate('com.atproto.label.subscribeLabels#info', v);
 }

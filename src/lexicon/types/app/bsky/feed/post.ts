@@ -1,16 +1,16 @@
 /**
  * GENERATED CODE - DO NOT MODIFY
  */
-import { ValidationResult, BlobRef } from '@atproto/lexicon'
-import { lexicons } from '../../../../lexicons'
-import { isObj, hasProp } from '../../../../util'
-import { CID } from 'multiformats/cid'
-import * as AppBskyRichtextFacet from '../richtext/facet'
-import * as AppBskyEmbedImages from '../embed/images'
-import * as AppBskyEmbedExternal from '../embed/external'
-import * as AppBskyEmbedRecord from '../embed/record'
-import * as AppBskyEmbedRecordWithMedia from '../embed/recordWithMedia'
-import * as ComAtprotoRepoStrongRef from '../../../com/atproto/repo/strongRef'
+import { ValidationResult, BlobRef } from '@atproto/lexicon';
+import { lexicons } from '../../../../lexicons';
+import { isObj, hasProp } from '../../../../util';
+import { CID } from 'multiformats/cid';
+import * as AppBskyRichtextFacet from '../richtext/facet';
+import * as AppBskyEmbedImages from '../embed/images';
+import * as AppBskyEmbedExternal from '../embed/external';
+import * as AppBskyEmbedRecord from '../embed/record';
+import * as AppBskyEmbedRecordWithMedia from '../embed/recordWithMedia';
+import * as ComAtprotoRepoStrongRef from '../../../com/atproto/repo/strongRef';
 
 export interface Record {
   text: string
@@ -29,15 +29,15 @@ export interface Record {
 }
 
 export function isRecord(v: unknown): v is Record {
-  return (
-    isObj(v) &&
+	return (
+		isObj(v) &&
     hasProp(v, '$type') &&
     (v.$type === 'app.bsky.feed.post#main' || v.$type === 'app.bsky.feed.post')
-  )
+	);
 }
 
 export function validateRecord(v: unknown): ValidationResult {
-  return lexicons.validate('app.bsky.feed.post#main', v)
+	return lexicons.validate('app.bsky.feed.post#main', v);
 }
 
 export interface ReplyRef {
@@ -47,13 +47,13 @@ export interface ReplyRef {
 }
 
 export function isReplyRef(v: unknown): v is ReplyRef {
-  return (
-    isObj(v) && hasProp(v, '$type') && v.$type === 'app.bsky.feed.post#replyRef'
-  )
+	return (
+		isObj(v) && hasProp(v, '$type') && v.$type === 'app.bsky.feed.post#replyRef'
+	);
 }
 
 export function validateReplyRef(v: unknown): ValidationResult {
-  return lexicons.validate('app.bsky.feed.post#replyRef', v)
+	return lexicons.validate('app.bsky.feed.post#replyRef', v);
 }
 
 /** Deprecated: use facets instead. */
@@ -66,13 +66,13 @@ export interface Entity {
 }
 
 export function isEntity(v: unknown): v is Entity {
-  return (
-    isObj(v) && hasProp(v, '$type') && v.$type === 'app.bsky.feed.post#entity'
-  )
+	return (
+		isObj(v) && hasProp(v, '$type') && v.$type === 'app.bsky.feed.post#entity'
+	);
 }
 
 export function validateEntity(v: unknown): ValidationResult {
-  return lexicons.validate('app.bsky.feed.post#entity', v)
+	return lexicons.validate('app.bsky.feed.post#entity', v);
 }
 
 /** Deprecated. Use app.bsky.richtext instead -- A text segment. Start is inclusive, end is exclusive. Indices are for utf16-encoded strings. */
@@ -83,13 +83,13 @@ export interface TextSlice {
 }
 
 export function isTextSlice(v: unknown): v is TextSlice {
-  return (
-    isObj(v) &&
+	return (
+		isObj(v) &&
     hasProp(v, '$type') &&
     v.$type === 'app.bsky.feed.post#textSlice'
-  )
+	);
 }
 
 export function validateTextSlice(v: unknown): ValidationResult {
-  return lexicons.validate('app.bsky.feed.post#textSlice', v)
+	return lexicons.validate('app.bsky.feed.post#textSlice', v);
 }

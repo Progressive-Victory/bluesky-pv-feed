@@ -1,12 +1,12 @@
 /**
  * GENERATED CODE - DO NOT MODIFY
  */
-import express from 'express'
-import { ValidationResult, BlobRef } from '@atproto/lexicon'
-import { lexicons } from '../../../../lexicons'
-import { isObj, hasProp } from '../../../../util'
-import { CID } from 'multiformats/cid'
-import { HandlerAuth } from '@atproto/xrpc-server'
+import express from 'express';
+import { ValidationResult, BlobRef } from '@atproto/lexicon';
+import { lexicons } from '../../../../lexicons';
+import { isObj, hasProp } from '../../../../util';
+import { CID } from 'multiformats/cid';
+import { HandlerAuth } from '@atproto/xrpc-server';
 
 export interface QueryParams {}
 
@@ -46,15 +46,15 @@ export interface Feed {
 }
 
 export function isFeed(v: unknown): v is Feed {
-  return (
-    isObj(v) &&
+	return (
+		isObj(v) &&
     hasProp(v, '$type') &&
     v.$type === 'app.bsky.feed.describeFeedGenerator#feed'
-  )
+	);
 }
 
 export function validateFeed(v: unknown): ValidationResult {
-  return lexicons.validate('app.bsky.feed.describeFeedGenerator#feed', v)
+	return lexicons.validate('app.bsky.feed.describeFeedGenerator#feed', v);
 }
 
 export interface Links {
@@ -64,13 +64,13 @@ export interface Links {
 }
 
 export function isLinks(v: unknown): v is Links {
-  return (
-    isObj(v) &&
+	return (
+		isObj(v) &&
     hasProp(v, '$type') &&
     v.$type === 'app.bsky.feed.describeFeedGenerator#links'
-  )
+	);
 }
 
 export function validateLinks(v: unknown): ValidationResult {
-  return lexicons.validate('app.bsky.feed.describeFeedGenerator#links', v)
+	return lexicons.validate('app.bsky.feed.describeFeedGenerator#links', v);
 }

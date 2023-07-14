@@ -1,12 +1,12 @@
 /**
  * GENERATED CODE - DO NOT MODIFY
  */
-import express from 'express'
-import { ValidationResult, BlobRef } from '@atproto/lexicon'
-import { lexicons } from '../../../../lexicons'
-import { isObj, hasProp } from '../../../../util'
-import { CID } from 'multiformats/cid'
-import { HandlerAuth } from '@atproto/xrpc-server'
+import express from 'express';
+import { ValidationResult, BlobRef } from '@atproto/lexicon';
+import { lexicons } from '../../../../lexicons';
+import { isObj, hasProp } from '../../../../util';
+import { CID } from 'multiformats/cid';
+import { HandlerAuth } from '@atproto/xrpc-server';
 
 export interface QueryParams {}
 
@@ -53,16 +53,16 @@ export interface AccountCodes {
 }
 
 export function isAccountCodes(v: unknown): v is AccountCodes {
-  return (
-    isObj(v) &&
+	return (
+		isObj(v) &&
     hasProp(v, '$type') &&
     v.$type === 'com.atproto.server.createInviteCodes#accountCodes'
-  )
+	);
 }
 
 export function validateAccountCodes(v: unknown): ValidationResult {
-  return lexicons.validate(
-    'com.atproto.server.createInviteCodes#accountCodes',
-    v,
-  )
+	return lexicons.validate(
+		'com.atproto.server.createInviteCodes#accountCodes',
+		v
+	);
 }

@@ -1,13 +1,13 @@
 /**
  * GENERATED CODE - DO NOT MODIFY
  */
-import { ValidationResult, BlobRef } from '@atproto/lexicon'
-import { lexicons } from '../../../../lexicons'
-import { isObj, hasProp } from '../../../../util'
-import { CID } from 'multiformats/cid'
-import * as AppBskyEmbedRecord from './record'
-import * as AppBskyEmbedImages from './images'
-import * as AppBskyEmbedExternal from './external'
+import { ValidationResult, BlobRef } from '@atproto/lexicon';
+import { lexicons } from '../../../../lexicons';
+import { isObj, hasProp } from '../../../../util';
+import { CID } from 'multiformats/cid';
+import * as AppBskyEmbedRecord from './record';
+import * as AppBskyEmbedImages from './images';
+import * as AppBskyEmbedExternal from './external';
 
 export interface Main {
   record: AppBskyEmbedRecord.Main
@@ -19,16 +19,16 @@ export interface Main {
 }
 
 export function isMain(v: unknown): v is Main {
-  return (
-    isObj(v) &&
+	return (
+		isObj(v) &&
     hasProp(v, '$type') &&
     (v.$type === 'app.bsky.embed.recordWithMedia#main' ||
       v.$type === 'app.bsky.embed.recordWithMedia')
-  )
+	);
 }
 
 export function validateMain(v: unknown): ValidationResult {
-  return lexicons.validate('app.bsky.embed.recordWithMedia#main', v)
+	return lexicons.validate('app.bsky.embed.recordWithMedia#main', v);
 }
 
 export interface View {
@@ -41,13 +41,13 @@ export interface View {
 }
 
 export function isView(v: unknown): v is View {
-  return (
-    isObj(v) &&
+	return (
+		isObj(v) &&
     hasProp(v, '$type') &&
     v.$type === 'app.bsky.embed.recordWithMedia#view'
-  )
+	);
 }
 
 export function validateView(v: unknown): ValidationResult {
-  return lexicons.validate('app.bsky.embed.recordWithMedia#view', v)
+	return lexicons.validate('app.bsky.embed.recordWithMedia#view', v);
 }

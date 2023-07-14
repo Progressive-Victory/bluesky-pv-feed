@@ -1,12 +1,12 @@
 /**
  * GENERATED CODE - DO NOT MODIFY
  */
-import { ValidationResult, BlobRef } from '@atproto/lexicon'
-import { lexicons } from '../../../../lexicons'
-import { isObj, hasProp } from '../../../../util'
-import { CID } from 'multiformats/cid'
-import { HandlerAuth, ErrorFrame } from '@atproto/xrpc-server'
-import { IncomingMessage } from 'http'
+import { ValidationResult, BlobRef } from '@atproto/lexicon';
+import { lexicons } from '../../../../lexicons';
+import { isObj, hasProp } from '../../../../util';
+import { CID } from 'multiformats/cid';
+import { HandlerAuth, ErrorFrame } from '@atproto/xrpc-server';
+import { IncomingMessage } from 'http';
 
 export interface QueryParams {
   /** The last known event to backfill from. */
@@ -45,15 +45,15 @@ export interface Commit {
 }
 
 export function isCommit(v: unknown): v is Commit {
-  return (
-    isObj(v) &&
+	return (
+		isObj(v) &&
     hasProp(v, '$type') &&
     v.$type === 'com.atproto.sync.subscribeRepos#commit'
-  )
+	);
 }
 
 export function validateCommit(v: unknown): ValidationResult {
-  return lexicons.validate('com.atproto.sync.subscribeRepos#commit', v)
+	return lexicons.validate('com.atproto.sync.subscribeRepos#commit', v);
 }
 
 export interface Handle {
@@ -65,15 +65,15 @@ export interface Handle {
 }
 
 export function isHandle(v: unknown): v is Handle {
-  return (
-    isObj(v) &&
+	return (
+		isObj(v) &&
     hasProp(v, '$type') &&
     v.$type === 'com.atproto.sync.subscribeRepos#handle'
-  )
+	);
 }
 
 export function validateHandle(v: unknown): ValidationResult {
-  return lexicons.validate('com.atproto.sync.subscribeRepos#handle', v)
+	return lexicons.validate('com.atproto.sync.subscribeRepos#handle', v);
 }
 
 export interface Migrate {
@@ -85,15 +85,15 @@ export interface Migrate {
 }
 
 export function isMigrate(v: unknown): v is Migrate {
-  return (
-    isObj(v) &&
+	return (
+		isObj(v) &&
     hasProp(v, '$type') &&
     v.$type === 'com.atproto.sync.subscribeRepos#migrate'
-  )
+	);
 }
 
 export function validateMigrate(v: unknown): ValidationResult {
-  return lexicons.validate('com.atproto.sync.subscribeRepos#migrate', v)
+	return lexicons.validate('com.atproto.sync.subscribeRepos#migrate', v);
 }
 
 export interface Tombstone {
@@ -104,15 +104,15 @@ export interface Tombstone {
 }
 
 export function isTombstone(v: unknown): v is Tombstone {
-  return (
-    isObj(v) &&
+	return (
+		isObj(v) &&
     hasProp(v, '$type') &&
     v.$type === 'com.atproto.sync.subscribeRepos#tombstone'
-  )
+	);
 }
 
 export function validateTombstone(v: unknown): ValidationResult {
-  return lexicons.validate('com.atproto.sync.subscribeRepos#tombstone', v)
+	return lexicons.validate('com.atproto.sync.subscribeRepos#tombstone', v);
 }
 
 export interface Info {
@@ -122,15 +122,15 @@ export interface Info {
 }
 
 export function isInfo(v: unknown): v is Info {
-  return (
-    isObj(v) &&
+	return (
+		isObj(v) &&
     hasProp(v, '$type') &&
     v.$type === 'com.atproto.sync.subscribeRepos#info'
-  )
+	);
 }
 
 export function validateInfo(v: unknown): ValidationResult {
-  return lexicons.validate('com.atproto.sync.subscribeRepos#info', v)
+	return lexicons.validate('com.atproto.sync.subscribeRepos#info', v);
 }
 
 export interface RepoOp {
@@ -141,13 +141,13 @@ export interface RepoOp {
 }
 
 export function isRepoOp(v: unknown): v is RepoOp {
-  return (
-    isObj(v) &&
+	return (
+		isObj(v) &&
     hasProp(v, '$type') &&
     v.$type === 'com.atproto.sync.subscribeRepos#repoOp'
-  )
+	);
 }
 
 export function validateRepoOp(v: unknown): ValidationResult {
-  return lexicons.validate('com.atproto.sync.subscribeRepos#repoOp', v)
+	return lexicons.validate('com.atproto.sync.subscribeRepos#repoOp', v);
 }

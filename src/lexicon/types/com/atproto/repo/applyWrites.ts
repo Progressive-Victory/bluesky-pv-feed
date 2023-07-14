@@ -1,12 +1,12 @@
 /**
  * GENERATED CODE - DO NOT MODIFY
  */
-import express from 'express'
-import { ValidationResult, BlobRef } from '@atproto/lexicon'
-import { lexicons } from '../../../../lexicons'
-import { isObj, hasProp } from '../../../../util'
-import { CID } from 'multiformats/cid'
-import { HandlerAuth } from '@atproto/xrpc-server'
+import express from 'express';
+import { ValidationResult, BlobRef } from '@atproto/lexicon';
+import { lexicons } from '../../../../lexicons';
+import { isObj, hasProp } from '../../../../util';
+import { CID } from 'multiformats/cid';
+import { HandlerAuth } from '@atproto/xrpc-server';
 
 export interface QueryParams {}
 
@@ -49,15 +49,15 @@ export interface Create {
 }
 
 export function isCreate(v: unknown): v is Create {
-  return (
-    isObj(v) &&
+	return (
+		isObj(v) &&
     hasProp(v, '$type') &&
     v.$type === 'com.atproto.repo.applyWrites#create'
-  )
+	);
 }
 
 export function validateCreate(v: unknown): ValidationResult {
-  return lexicons.validate('com.atproto.repo.applyWrites#create', v)
+	return lexicons.validate('com.atproto.repo.applyWrites#create', v);
 }
 
 /** Update an existing record. */
@@ -69,15 +69,15 @@ export interface Update {
 }
 
 export function isUpdate(v: unknown): v is Update {
-  return (
-    isObj(v) &&
+	return (
+		isObj(v) &&
     hasProp(v, '$type') &&
     v.$type === 'com.atproto.repo.applyWrites#update'
-  )
+	);
 }
 
 export function validateUpdate(v: unknown): ValidationResult {
-  return lexicons.validate('com.atproto.repo.applyWrites#update', v)
+	return lexicons.validate('com.atproto.repo.applyWrites#update', v);
 }
 
 /** Delete an existing record. */
@@ -88,13 +88,13 @@ export interface Delete {
 }
 
 export function isDelete(v: unknown): v is Delete {
-  return (
-    isObj(v) &&
+	return (
+		isObj(v) &&
     hasProp(v, '$type') &&
     v.$type === 'com.atproto.repo.applyWrites#delete'
-  )
+	);
 }
 
 export function validateDelete(v: unknown): ValidationResult {
-  return lexicons.validate('com.atproto.repo.applyWrites#delete', v)
+	return lexicons.validate('com.atproto.repo.applyWrites#delete', v);
 }

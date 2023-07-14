@@ -1,12 +1,12 @@
 /**
  * GENERATED CODE - DO NOT MODIFY
  */
-import { ValidationResult, BlobRef } from '@atproto/lexicon'
-import { lexicons } from '../../../../lexicons'
-import { isObj, hasProp } from '../../../../util'
-import { CID } from 'multiformats/cid'
-import * as ComAtprotoLabelDefs from '../../../com/atproto/label/defs'
-import * as AppBskyGraphDefs from '../graph/defs'
+import { ValidationResult, BlobRef } from '@atproto/lexicon';
+import { lexicons } from '../../../../lexicons';
+import { isObj, hasProp } from '../../../../util';
+import { CID } from 'multiformats/cid';
+import * as ComAtprotoLabelDefs from '../../../com/atproto/label/defs';
+import * as AppBskyGraphDefs from '../graph/defs';
 
 export interface ProfileViewBasic {
   did: string
@@ -19,15 +19,15 @@ export interface ProfileViewBasic {
 }
 
 export function isProfileViewBasic(v: unknown): v is ProfileViewBasic {
-  return (
-    isObj(v) &&
+	return (
+		isObj(v) &&
     hasProp(v, '$type') &&
     v.$type === 'app.bsky.actor.defs#profileViewBasic'
-  )
+	);
 }
 
 export function validateProfileViewBasic(v: unknown): ValidationResult {
-  return lexicons.validate('app.bsky.actor.defs#profileViewBasic', v)
+	return lexicons.validate('app.bsky.actor.defs#profileViewBasic', v);
 }
 
 export interface ProfileView {
@@ -43,15 +43,15 @@ export interface ProfileView {
 }
 
 export function isProfileView(v: unknown): v is ProfileView {
-  return (
-    isObj(v) &&
+	return (
+		isObj(v) &&
     hasProp(v, '$type') &&
     v.$type === 'app.bsky.actor.defs#profileView'
-  )
+	);
 }
 
 export function validateProfileView(v: unknown): ValidationResult {
-  return lexicons.validate('app.bsky.actor.defs#profileView', v)
+	return lexicons.validate('app.bsky.actor.defs#profileView', v);
 }
 
 export interface ProfileViewDetailed {
@@ -71,15 +71,15 @@ export interface ProfileViewDetailed {
 }
 
 export function isProfileViewDetailed(v: unknown): v is ProfileViewDetailed {
-  return (
-    isObj(v) &&
+	return (
+		isObj(v) &&
     hasProp(v, '$type') &&
     v.$type === 'app.bsky.actor.defs#profileViewDetailed'
-  )
+	);
 }
 
 export function validateProfileViewDetailed(v: unknown): ValidationResult {
-  return lexicons.validate('app.bsky.actor.defs#profileViewDetailed', v)
+	return lexicons.validate('app.bsky.actor.defs#profileViewDetailed', v);
 }
 
 export interface ViewerState {
@@ -93,15 +93,15 @@ export interface ViewerState {
 }
 
 export function isViewerState(v: unknown): v is ViewerState {
-  return (
-    isObj(v) &&
+	return (
+		isObj(v) &&
     hasProp(v, '$type') &&
     v.$type === 'app.bsky.actor.defs#viewerState'
-  )
+	);
 }
 
 export function validateViewerState(v: unknown): ValidationResult {
-  return lexicons.validate('app.bsky.actor.defs#viewerState', v)
+	return lexicons.validate('app.bsky.actor.defs#viewerState', v);
 }
 
 export type Preferences = (
@@ -116,15 +116,15 @@ export interface AdultContentPref {
 }
 
 export function isAdultContentPref(v: unknown): v is AdultContentPref {
-  return (
-    isObj(v) &&
+	return (
+		isObj(v) &&
     hasProp(v, '$type') &&
     v.$type === 'app.bsky.actor.defs#adultContentPref'
-  )
+	);
 }
 
 export function validateAdultContentPref(v: unknown): ValidationResult {
-  return lexicons.validate('app.bsky.actor.defs#adultContentPref', v)
+	return lexicons.validate('app.bsky.actor.defs#adultContentPref', v);
 }
 
 export interface ContentLabelPref {
@@ -134,13 +134,13 @@ export interface ContentLabelPref {
 }
 
 export function isContentLabelPref(v: unknown): v is ContentLabelPref {
-  return (
-    isObj(v) &&
+	return (
+		isObj(v) &&
     hasProp(v, '$type') &&
     v.$type === 'app.bsky.actor.defs#contentLabelPref'
-  )
+	);
 }
 
 export function validateContentLabelPref(v: unknown): ValidationResult {
-  return lexicons.validate('app.bsky.actor.defs#contentLabelPref', v)
+	return lexicons.validate('app.bsky.actor.defs#contentLabelPref', v);
 }

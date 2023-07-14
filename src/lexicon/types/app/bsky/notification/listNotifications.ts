@@ -1,14 +1,14 @@
 /**
  * GENERATED CODE - DO NOT MODIFY
  */
-import express from 'express'
-import { ValidationResult, BlobRef } from '@atproto/lexicon'
-import { lexicons } from '../../../../lexicons'
-import { isObj, hasProp } from '../../../../util'
-import { CID } from 'multiformats/cid'
-import { HandlerAuth } from '@atproto/xrpc-server'
-import * as AppBskyActorDefs from '../actor/defs'
-import * as ComAtprotoLabelDefs from '../../../com/atproto/label/defs'
+import express from 'express';
+import { ValidationResult, BlobRef } from '@atproto/lexicon';
+import { lexicons } from '../../../../lexicons';
+import { isObj, hasProp } from '../../../../util';
+import { CID } from 'multiformats/cid';
+import { HandlerAuth } from '@atproto/xrpc-server';
+import * as AppBskyActorDefs from '../actor/defs';
+import * as ComAtprotoLabelDefs from '../../../com/atproto/label/defs';
 
 export interface QueryParams {
   limit: number
@@ -67,16 +67,16 @@ export interface Notification {
 }
 
 export function isNotification(v: unknown): v is Notification {
-  return (
-    isObj(v) &&
+	return (
+		isObj(v) &&
     hasProp(v, '$type') &&
     v.$type === 'app.bsky.notification.listNotifications#notification'
-  )
+	);
 }
 
 export function validateNotification(v: unknown): ValidationResult {
-  return lexicons.validate(
-    'app.bsky.notification.listNotifications#notification',
-    v,
-  )
+	return lexicons.validate(
+		'app.bsky.notification.listNotifications#notification',
+		v
+	);
 }

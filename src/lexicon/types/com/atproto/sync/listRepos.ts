@@ -1,12 +1,12 @@
 /**
  * GENERATED CODE - DO NOT MODIFY
  */
-import express from 'express'
-import { ValidationResult, BlobRef } from '@atproto/lexicon'
-import { lexicons } from '../../../../lexicons'
-import { isObj, hasProp } from '../../../../util'
-import { CID } from 'multiformats/cid'
-import { HandlerAuth } from '@atproto/xrpc-server'
+import express from 'express';
+import { ValidationResult, BlobRef } from '@atproto/lexicon';
+import { lexicons } from '../../../../lexicons';
+import { isObj, hasProp } from '../../../../util';
+import { CID } from 'multiformats/cid';
+import { HandlerAuth } from '@atproto/xrpc-server';
 
 export interface QueryParams {
   limit: number
@@ -49,13 +49,13 @@ export interface Repo {
 }
 
 export function isRepo(v: unknown): v is Repo {
-  return (
-    isObj(v) &&
+	return (
+		isObj(v) &&
     hasProp(v, '$type') &&
     v.$type === 'com.atproto.sync.listRepos#repo'
-  )
+	);
 }
 
 export function validateRepo(v: unknown): ValidationResult {
-  return lexicons.validate('com.atproto.sync.listRepos#repo', v)
+	return lexicons.validate('com.atproto.sync.listRepos#repo', v);
 }

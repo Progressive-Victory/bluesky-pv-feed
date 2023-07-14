@@ -1,13 +1,13 @@
 /**
  * GENERATED CODE - DO NOT MODIFY
  */
-import express from 'express'
-import { ValidationResult, BlobRef } from '@atproto/lexicon'
-import { lexicons } from '../../../../lexicons'
-import { isObj, hasProp } from '../../../../util'
-import { CID } from 'multiformats/cid'
-import { HandlerAuth } from '@atproto/xrpc-server'
-import * as AppBskyActorDefs from '../actor/defs'
+import express from 'express';
+import { ValidationResult, BlobRef } from '@atproto/lexicon';
+import { lexicons } from '../../../../lexicons';
+import { isObj, hasProp } from '../../../../util';
+import { CID } from 'multiformats/cid';
+import { HandlerAuth } from '@atproto/xrpc-server';
+import * as AppBskyActorDefs from '../actor/defs';
 
 export interface QueryParams {
   uri: string
@@ -55,11 +55,11 @@ export interface Like {
 }
 
 export function isLike(v: unknown): v is Like {
-  return (
-    isObj(v) && hasProp(v, '$type') && v.$type === 'app.bsky.feed.getLikes#like'
-  )
+	return (
+		isObj(v) && hasProp(v, '$type') && v.$type === 'app.bsky.feed.getLikes#like'
+	);
 }
 
 export function validateLike(v: unknown): ValidationResult {
-  return lexicons.validate('app.bsky.feed.getLikes#like', v)
+	return lexicons.validate('app.bsky.feed.getLikes#like', v);
 }
